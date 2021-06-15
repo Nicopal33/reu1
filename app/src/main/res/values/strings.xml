@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MaReu</string>
+    <string name="settings">Settings</string>
+    <string name="filtrer_par_date">Filtrer par date</string>
+    <string name="filter_par_salle">Filter par salle</string>
+    <string name="Salle_1">Salle 1</string>
+    <string name="Salle_2">Salle 2</string>
+    <string name="Salle_3">Salle 3</string>
+    <string name="Salle_4">Salle 4</string>
+    <string name="pas_de_reunion">Pas de Réunion prévue</string>
+</resources>

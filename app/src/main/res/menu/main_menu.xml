@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="com.openclassrooms.mareu.ui.listReunionActivity">
+
+        <item
+            android:id="@+id/action_setting"
+            android:icon="@drawable/baseline_subject_24"
+            android:title="@string/settings"
+            app:showAsAction="ifRoom">
+
+                <menu>
+
+                        <item
+                                android:id="@+id/date_filter"
+                                android:title="@string/filtrer_par_date">
+                        </item>
+
+
+
+                        <item
+                                android:id="@+id/room_filter"
+                                android:title="@string/filter_par_salle">
+
+                                <menu>
+
+                                        <item
+                                                android:id="@+id/filter_room_1"
+                                                android:title="@string/Salle_1">
+                                        </item>
+
+
+                                        <item
+                                            android:id="@+id/filter_room_2"
+                                            android:title="@string/Salle_2">
+                                        </item>
+
+
+                                         <item
+                                             android:id="@+id/filter_room_3"
+                                             android:title="@string/Salle_3">
+                                        </item>
+
+
+                                        <item
+                                            android:id="@+id/filter_room_4"
+                                            android:title="@string/Salle_4">
+                                        </item>
+
+                                </menu>
+                        </item>
+                </menu>
+        </item>
+
+</menu>
