@@ -10,10 +10,13 @@ import org.hamcrest.collection.IsIterableContainingInAnyOrder;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Date;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 
@@ -25,7 +28,9 @@ public class ReunionServiceTest {
     private ReunionApiService service;
 
     @Before
-    public void setup() {service = DI.getNewInstanceApiService(); }
+    public void setup() {
+        service = DI.getNewInstanceApiService();
+    }
 
     @Test
     public void getReunionsWithSuccess() {
@@ -44,8 +49,31 @@ public class ReunionServiceTest {
 
     @Test
     public void createReunionWithSuccess() {
-        Reunion reunionToCreate = new Reunion(13, "Commercial", "11 mai 2021", "Salle 3", "11h00", "12h00", "popol@gmail.com , franck@yahoo.fr , anne@hotmail.com , nico@gmail.com","https://cdn2.iconfinder.com/data/icons/emoji-vol-3/512/10_Depressed_sad_face_emoticon_sad_smiley_unhappy-128.png");
+        Reunion reunionToCreate = new Reunion(13, "Commercial", new Date(),"Salle 3", "11h00", "12h00", "popol@gmail.com , franck@yahoo.fr , anne@hotmail.com , nico@gmail.com", "https://cdn2.iconfinder.com/data/icons/emoji-vol-3/512/10_Depressed_sad_face_emoticon_sad_smiley_unhappy-128.png");
         service.createReunion(reunionToCreate);
         assertTrue(service.getReunions().contains(reunionToCreate));
     }
+
+    @Test
+    public void filterRoomWithSuccess() {
+        service.getReunions();
+        List<Reunion> listReunions = service.filterRoom("Salle 2");
+        for (Reunion reunion : listReunions) {
+            assertSame("Salle 2", reunion.getRoom());
+
+        }
+    }
+
+    @Test
+    public void filterDateWithSuccess() {
+        service.getReunions();
+        Date date = new Date (1624147200);
+        List<Reunion> listReunions = service.dateFilter(date);
+        assertEquals(2,listReunions.size()) ;
+
+
+
+
+    }
+
 }

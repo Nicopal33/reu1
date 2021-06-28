@@ -6,6 +6,7 @@ import java.util.Objects;
 
 public class Reunion implements Serializable {
 
+    public String getRoom;
     private int id;
     private String subject;
     private Date date;

@@ -39,6 +39,8 @@ dependencies {
     implementation 'com.jakewharton:butterknife:10.2.3'
     implementation 'com.android.support:design:30.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+    androidTestImplementation 'androidx.test:rules:1.4.0-alpha06'
+
 
 
 
